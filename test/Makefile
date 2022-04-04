@@ -32,6 +32,7 @@ test.center:
 test.hbond:
 	@-cd Test_Hbond && ./RunTest.sh $(OPT)
 	@-cd Test_Hbond_Split && ./RunTest.sh $(OPT)
+	@-cd Test_Hbond_Matrix && ./RunTest.sh $(OPT)
 
 test.image:
 	@-cd Test_Image && ./RunTest.sh $(OPT)
@@ -498,6 +499,9 @@ test.hmassrepartition:
 test.prepareforleap:
 	@-cd Test_PrepareForLeap && ./RunTest.sh $(OPT)
 
+test.keep:
+	@-cd Test_Keep && ./RunTest.sh $(OPT)
+
 # Every test target should go here.
 COMPLETETESTS=test.general \
               test.strip \
@@ -655,7 +659,8 @@ COMPLETETESTS=test.general \
               test.multipucker \
               test.ljc \
               test.hmassrepartition \
-              test.prepareforleap
+              test.prepareforleap \
+              test.keep
 
 test.all:
 	$(MAKE) test.complete summary
